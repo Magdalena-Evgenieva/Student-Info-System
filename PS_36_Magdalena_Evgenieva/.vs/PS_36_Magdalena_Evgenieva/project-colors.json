@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c2f3d266-ff86-4601-9046-a5b4faf5b1ce": {
+      "ProjectGuid": "c2f3d266-ff86-4601-9046-a5b4faf5b1ce",
+      "DisplayName": "StudentInfoSystem",
+      "ColorIndex": 0
+    },
+    "0c130c90-0ba0-4488-86ad-6199cc4a081a": {
+      "ProjectGuid": "0c130c90-0ba0-4488-86ad-6199cc4a081a",
+      "DisplayName": "UserLogin",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
