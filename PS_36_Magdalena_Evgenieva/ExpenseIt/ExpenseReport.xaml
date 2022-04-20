@@ -36,12 +36,13 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <DataGrid Grid.Column="1" Grid.Row="0" ItemsSource="{Binding Path=Expenses}" AutoGenerateColumns="False" RowHeaderWidth="0" RenderTransformOrigin="0.543,0.481" Margin="0,0,100,-65" >
+            <DataGrid Grid.Column="1" Grid.Row="0" ItemsSource="{Binding Path=Expense}" AutoGenerateColumns="False" RowHeaderWidth="0" >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ExpenseType" Binding="{Binding Path=ExpenseType}" />
+                    <DataGridTextColumn Header="ExpenseType" Binding="{Binding Path=ExpenseType}"  />
                     <DataGridTextColumn Header="Amount" Binding="{Binding Path=ExpenseAmount}"/>
                 </DataGrid.Columns>
             </DataGrid>
+
 
         </Grid>
     </Grid>

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,28 +16,36 @@ using System.Windows.Shapes;
 
 namespace ExpenseIt
 {
-    public class Expense
-    {
-        public string ExpenseType;
-        public double ExpenseAmount;
-    }
-    public class Person
-    {
-        public string Name;
-        public string Department;
-        public List<Expense> Expenses;
-    }
-    public partial class ExpenseItHome : Window
+    
+    
+    public partial class ExpenseItHome : Window,  INotifyPropertyChanged
     {
 
         public List<Person> ExpenseDataSource { get; set; }
-        public string MainCaptionText { get; set; }
-        public DateTime LastChecked { get; set; }
+        private DateTime lastChecked;
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public string MainCaptionText { get; set; }
+        public DateTime LastChecked
+        {
+            get { return lastChecked; }
+            set
+            {
+                lastChecked = value;
+                // Извикване на PropertyChanged
+            }
+        }
+
+        public ObservableCollection<string> PersonsChecked { get; set; }
         public ExpenseItHome()
         {
+            PersonsChecked = new ObservableCollection<string>();
             InitializeComponent();
-            InitializeComponent();
+            MainCaptionText = "View Expense Report :";
+            LastChecked = DateTime.Now;
+            this.DataContext = this;
+
             ExpenseDataSource = new List<Person>()
             {
                 new Person()
@@ -91,16 +101,16 @@ namespace ExpenseIt
                 new Person()
                 {
                 Name="David",
-                Department ="Crisis Management",
+                Department ="Management",
                 Expenses = new List<Expense>()
                     {
-                        new Expense() { ExpenseType="Fitness card", ExpenseAmount=100 }
+                        new Expense() { ExpenseType="Bank card", ExpenseAmount=100 }
                     }
                 },
                 new Person()
                 {
                     Name="James",
-                    Department ="Software Logistics",
+                    Department ="Engeneer",
                     Expenses = new List<Expense>()
 
                     {
@@ -116,18 +126,24 @@ namespace ExpenseIt
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("ExpenseIt", "Open report?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-            {
-                ExpenseReport expenseReport = new ExpenseReport(peopleListBox.SelectedItem);
-                expenseReport.Width = Width;
-                expenseReport.Height = Height;
-                expenseReport.Show();
-                this.Close();
-            }
-            else
-            {
-                this.Show();
-            }
+            //if (MessageBox.Show("ExpenseIt", "Open report?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            //{
+            //    ExpenseReport expenseReport = new ExpenseReport();
+            //    expenseReport.Width = Width;
+            //    expenseReport.Height = Height;
+            //    expenseReport.Show();
+            //    this.Show();
+            //}
+            ExpenseReport expenseReport = new ExpenseReport();
+            expenseReport.Show();
+
+        }
+        private void peopleListBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+
+        {
+            LastChecked = DateTime.Now;
+            //PersonsChecked.Add((peopleListBox.SelectedItem as System.Xml.XmlElement).Attributes["Name"].Value);
+            PersonsChecked.Add(peopleListBox.SelectedItem.ToString());
         }
     }
 

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\project2\\bebi\\PS_36_Magdalena_Evgenieva\\PS_36_Magdalena_Evgenieva\\UserLogin.csproj",
+      "projectUniqueName": "C:\\Users\\Lenovo\\Desktop\\StudentInfoSystem\\StudentInfoSystem\\PS_36_Magdalena_Evgenieva\\PS_36_Magdalena_Evgenieva\\UserLogin.csproj",
       "projectName": "UserLogin",
-      "projectPath": "C:\\Users\\Lenovo\\source\\repos\\project2\\bebi\\PS_36_Magdalena_Evgenieva\\PS_36_Magdalena_Evgenieva\\UserLogin.csproj",
+      "projectPath": "C:\\Users\\Lenovo\\Desktop\\StudentInfoSystem\\StudentInfoSystem\\PS_36_Magdalena_Evgenieva\\PS_36_Magdalena_Evgenieva\\UserLogin.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lenovo\\source\\repos\\project2\\bebi\\PS_36_Magdalena_Evgenieva\\PS_36_Magdalena_Evgenieva\\obj\\",
+      "outputPath": "C:\\Users\\Lenovo\\Desktop\\StudentInfoSystem\\StudentInfoSystem\\PS_36_Magdalena_Evgenieva\\PS_36_Magdalena_Evgenieva\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
